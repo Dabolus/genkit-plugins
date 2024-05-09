@@ -1,23 +1,23 @@
 # Anthropic AI Plugin for Firebase Genkit
 
-## Example GPT-4 Turbo flow
+## Example Claude 3 Haiku flow
 
 ```ts
 import { generate } from '@genkit-ai/ai/generate';
 import { flow } from '@genkit-ai/flow';
-import { gpt4Turbo } from '@genkit-ai/plugin-openai';
+import { claude3Haiku } from './plugins/anthropic';
 import * as z from 'zod';
 
-export const openaiStoryFlow = flow(
+export const anthropicStoryFlow = flow(
   {
-    name: 'openaiStoryFlow',
+    name: 'anthropicStoryFlow',
     input: z.string(),
     output: z.string(),
     streamType: z.string(),
   },
   async (subject, streamingCallback) => {
     const llmResponse = await generate({
-      model: gpt4Turbo,
+      model: claude3Haiku,
       prompt: `Tell me a story about a ${subject}`,
       streamingCallback: ({ content }) => {
         streamingCallback?.(content[0]?.text ?? '');
