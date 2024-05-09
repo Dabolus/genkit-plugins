@@ -1,0 +1,59 @@
+{
+  "name": "genkitx-openai",
+  "description": "Genkit AI framework plugin for OpenAI APIs.",
+  "keywords": [
+    "genkit",
+    "genkit-plugin",
+    "genkit-embedder",
+    "genkit-model",
+    "openai",
+    "gpt-4",
+    "gpt",
+    "gpt-3.5",
+    "ai",
+    "genai",
+    "generative-ai"
+  ],
+  "version": "0.1.0",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dabolus/genkit-plugins.git",
+    "directory": "plugins/openai"
+  },
+  "author": "Dabolus",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@genkit-ai/ai": "0.5.0-rc.9",
+    "@genkit-ai/core": "0.5.0-rc.9",
+    "openai": "^4.43.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.11",
+    "npm-run-all": "^4.1.5",
+    "tsup": "^8.0.2",
+    "tsx": "^4.9.3",
+    "typescript": "^4.9.5"
+  },
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./lib/index.js",
+      "default": "./lib/index.js",
+      "import": "./lib/index.mjs",
+      "types": "./lib/index.d.ts"
+    }
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "check": "tsc",
+    "compile": "tsup-node",
+    "build:clean": "rm -rf ./lib",
+    "build": "npm-run-all build:clean check compile",
+    "build:watch": "tsup-node --watch",
+    "test": "node --import tsx --test ./tests/*_test.ts"
+  }
+}
