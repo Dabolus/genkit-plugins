@@ -1,5 +1,15 @@
 # Anthropic AI Plugin for Firebase Genkit
 
+## Installation
+
+```bash
+npm install genkitx-anthropic
+# or
+pnpm add genkitx-anthropic
+# or
+yarn add genkitx-anthropic
+```
+
 ## Example Claude 3 Haiku flow
 
 ```ts

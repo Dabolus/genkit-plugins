@@ -1,5 +1,15 @@
 # OpenAI Plugin for Firebase Genkit
 
+## Installation
+
+```bash
+npm install genkitx-openai
+# or
+pnpm add genkitx-openai
+# or
+yarn add genkitx-openai
+```
+
 ## Example GPT-4 Turbo flow
 
 ```ts
