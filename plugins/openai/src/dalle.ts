@@ -1,15 +1,15 @@
 import { Message } from '@genkit-ai/ai';
 import {
   defineModel,
-  GenerateRequest,
-  GenerateResponseData,
-  ModelAction,
   modelRef,
+  type GenerateRequest,
+  type GenerateResponseData,
+  type ModelAction,
 } from '@genkit-ai/ai/model';
 import OpenAI from 'openai';
 import {
-  ImageGenerateParams,
-  ImagesResponse,
+  type ImageGenerateParams,
+  type ImagesResponse,
 } from 'openai/resources/images.mjs';
 import { z } from 'zod';
 
@@ -29,6 +29,7 @@ export const dallE3 = modelRef({
       media: false,
       output: ['media'],
       multiturn: false,
+      systemRole: false,
       tools: false,
     },
   },

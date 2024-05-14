@@ -1,27 +1,27 @@
 import { Message } from '@genkit-ai/ai';
 import {
-  CandidateData,
   defineModel,
-  GenerateRequest,
-  MessageData,
   modelRef,
-  Part,
-  Role,
-  ToolDefinition,
-  ToolRequestPart,
+  type CandidateData,
+  type GenerateRequest,
+  type MessageData,
+  type Part,
+  type Role,
+  type ToolDefinition,
+  type ToolRequestPart,
 } from '@genkit-ai/ai/model';
 import OpenAI from 'openai';
 import {
-  ChatCompletion,
-  ChatCompletionChunk,
-  ChatCompletionContentPart,
-  ChatCompletionCreateParamsNonStreaming,
-  ChatCompletionMessageParam,
-  ChatCompletionMessageToolCall,
-  ChatCompletionRole,
-  ChatCompletionTool,
-  CompletionChoice,
-} from 'openai/resources/index';
+  type ChatCompletion,
+  type ChatCompletionChunk,
+  type ChatCompletionContentPart,
+  type ChatCompletionCreateParamsNonStreaming,
+  type ChatCompletionMessageParam,
+  type ChatCompletionMessageToolCall,
+  type ChatCompletionRole,
+  type ChatCompletionTool,
+  type CompletionChoice,
+} from 'openai/resources/index.mjs';
 import z from 'zod';
 
 const API_NAME_MAP = {
@@ -60,6 +60,7 @@ export const gpt4Turbo = modelRef({
       multiturn: true,
       tools: true,
       media: false,
+      systemRole: true,
       output: ['text', 'json'],
     },
   },
@@ -75,6 +76,7 @@ export const gpt4Vision = modelRef({
       multiturn: true,
       tools: false,
       media: true,
+      systemRole: true,
       output: ['text'],
     },
   },
@@ -90,6 +92,7 @@ export const gpt4 = modelRef({
       multiturn: true,
       tools: true,
       media: false,
+      systemRole: true,
       output: ['text'],
     },
   },
@@ -105,6 +108,7 @@ export const gpt35Turbo = modelRef({
       multiturn: true,
       tools: true,
       media: false,
+      systemRole: true,
       output: ['json', 'text'],
     },
   },

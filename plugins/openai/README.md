@@ -10,6 +10,16 @@ pnpm add genkitx-openai
 yarn add genkitx-openai
 ```
 
+The plugin depends on Genkit core packages, so make sure to have them installed as well:
+
+```bash
+npm install @genkit-ai/core @genkit-ai/ai
+# or
+pnpm add @genkit-ai/core @genkit-ai/ai
+# or
+yarn add @genkit-ai/core @genkit-ai/ai
+```
+
 ## Example GPT-4 Turbo flow
 
 ```ts
