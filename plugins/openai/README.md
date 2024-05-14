@@ -22,13 +22,13 @@ pnpm add @genkit-ai/core @genkit-ai/ai
 yarn add @genkit-ai/core @genkit-ai/ai
 ```
 
-## Example GPT-4 Turbo flow
+## Example GPT-4o flow
 
 ```ts
 import { generate } from '@genkit-ai/ai';
 import { configureGenkit } from '@genkit-ai/core';
 import { defineFlow, startFlowsServer } from '@genkit-ai/flow';
-import { openAI, gpt4Turbo } from 'genkitx-openai';
+import { openAI, gpt4o } from 'genkitx-openai';
 import * as z from 'zod';
 
 configureGenkit({
@@ -49,7 +49,7 @@ export const menuSuggestionFlow = defineFlow(
   async (subject, streamingCallback) => {
     const llmResponse = await generate({
       prompt: `Suggest an item for the menu of a ${subject} themed restaurant`,
-      model: gpt4Turbo,
+      model: gpt4o,
       streamingCallback: ({ content }) => {
         streamingCallback?.(content[0]?.text ?? '');
       },
