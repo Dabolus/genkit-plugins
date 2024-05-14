@@ -1,5 +1,7 @@
 # OpenAI Plugin for Firebase Genkit
 
+This Genkit plugin allows to use OpenAI models through their official APIs.
+
 ## Installation
 
 ```bash
@@ -23,27 +25,39 @@ yarn add @genkit-ai/core @genkit-ai/ai
 ## Example GPT-4 Turbo flow
 
 ```ts
-import { generate } from '@genkit-ai/ai/generate';
-import { flow } from '@genkit-ai/flow';
-import { gpt4Turbo } from '@genkit-ai/plugin-openai';
+import { generate } from '@genkit-ai/ai';
+import { configureGenkit } from '@genkit-ai/core';
+import { defineFlow, startFlowsServer } from '@genkit-ai/flow';
+import { openAI, gpt4Turbo } from 'genkitx-openai';
 import * as z from 'zod';
 
-export const openaiStoryFlow = flow(
+configureGenkit({
+  plugins: [
+    // OpenAI API key is required and defaults to the OPENAI_API_KEY environment variable
+    openAI({ apiKey: process.env.OPENAI_API_KEY }),
+  ],
+  logLevel: 'debug',
+  enableTracingAndMetrics: true,
+});
+
+export const menuSuggestionFlow = defineFlow(
   {
-    name: 'openaiStoryFlow',
-    input: z.string(),
-    output: z.string(),
-    streamType: z.string(),
+    name: 'menuSuggestionFlow',
+    inputSchema: z.string(),
+    outputSchema: z.string(),
   },
   async (subject, streamingCallback) => {
     const llmResponse = await generate({
+      prompt: `Suggest an item for the menu of a ${subject} themed restaurant`,
       model: gpt4Turbo,
-      prompt: `Tell me a story about a ${subject}`,
       streamingCallback: ({ content }) => {
         streamingCallback?.(content[0]?.text ?? '');
       },
     });
+
     return llmResponse.text();
   },
 );
+
+startFlowsServer();
 ```
