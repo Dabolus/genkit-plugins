@@ -1,3 +1,5 @@
+![Firebase Genkit + OpenAI](https://github.com/Dabolus/genkit-plugins/blob/main/assets/genkit-openai.png?raw=true)
+
 # OpenAI Plugin for Firebase Genkit
 
 This Genkit plugin allows to use OpenAI models through their official APIs.

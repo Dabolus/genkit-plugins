@@ -1,6 +1,6 @@
-# Genkit Plugins
+![Firebase Genkit Community Plugins](https://github.com/Dabolus/genkit-plugins/blob/main/assets/genkit-plugins.png?raw=true)
 
-Community maintained plugins for Genkit.
+Community maintained plugins for Firebase Genkit.
 
 ## Currently available plugins:
 

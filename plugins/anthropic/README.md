@@ -1,3 +1,5 @@
+![Firebase Genkit + Anthropic AI](https://github.com/Dabolus/genkit-plugins/blob/main/assets/genkit-anthropic.png?raw=true)
+
 # Anthropic AI Plugin for Firebase Genkit
 
 This Genkit plugin allows to use Anthropic AI models through their official APIs.
