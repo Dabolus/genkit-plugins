@@ -1,4 +1,4 @@
-![Firebase Genkit + Anthropic AI](https://github.com/Dabolus/genkit-plugins/blob/main/assets/genkit-anthropic.png?raw=true)
+![Firebase Genkit + Anthropic AI](https://github.com/firebase-community/genkit-plugins/blob/main/assets/genkit-anthropic.png?raw=true)
 
 # Anthropic AI Plugin for Firebase Genkit
 
