@@ -1,3 +1,10 @@
+> [!WARNING]  
+> The plugins in this repository have now been migrated to [TheFireCo/genkit-plugins](https://github.com/TheFireCo/genkit-plugins).
+>
+> Refer to the new repository for bugs/feature requests.
+
+---
+
 ![Firebase Genkit Community Plugins](https://github.com/firebase-community/genkit-plugins/blob/main/assets/genkit-plugins.png?raw=true)
 
 Community maintained plugins for Firebase Genkit.
